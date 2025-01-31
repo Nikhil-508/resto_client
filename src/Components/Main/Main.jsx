@@ -31,7 +31,7 @@ const Main = ({ selectedCategory }) => {
   
   const fetchMenuItems = async (category) => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/menuItems/${category}`);
+      const response = await axios.get(`https://resto-server.vercel.app/api/menuItems/${category}`);
       setMenuItems(response.data);
     } catch (error) {
       console.error("Error fetching menu items:", error);
@@ -56,7 +56,7 @@ const Main = ({ selectedCategory }) => {
 
         console.log("haii",menuItemData.category)
 
-      const response = await axios.post("http://localhost:5000/api/menuItems", menuItemData);
+      const response = await axios.post("https://resto-server.vercel.app/api/menuItems", menuItemData);
       console.log("Menu item created:", response.data);
       alert("Menu item created successfully!");
       setMenuItemData({ name: "", description: "", price: "", category: selectedCategory }); // Clear form
