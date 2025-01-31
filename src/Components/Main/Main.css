@@ -1,0 +1,227 @@
+.main-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: height 0.3s ease; /* Smooth transition */
+}
+
+.main-container.default-height {
+  height: 672px;
+}
+
+.main-container.expanded-height {
+  height: 800px; /* Adjust to the desired height */
+}
+.menu-items{
+    border: 1px solid #FFFFFF;
+    width: 1140px;
+    height: 416px;
+    display: flex;
+    flex-direction: column;
+}
+.title-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;  
+}
+.title-section h1{
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 74.1px;
+    color: #FFFFFF;
+    text-shadow: 4px 3px 0px #800020; /* x-offset, y-offset, blur-radius, shadow-color */
+}
+.title-section img{
+    width: 68px;
+    height: 3px;
+}
+.menuitem-container{
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 5px; /* Space between each menu item */
+}
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* Default single column */
+  gap: 20px; /* Space between items */
+}
+.single-menu{
+    display: flex;
+    flex-direction: column;
+    width: 467px;
+    height: 44px;
+    gap: 10px;
+    padding: 21px;
+}
+.single-menu h3{
+    font-size: 26px;
+    line-height: 38.53px;
+    font-weight: 400;
+    color: #FFFFFF;
+    font-family: "Oswald", serif;
+}
+.single-menu span{
+    font-size: 18px;
+    font-weight: 400;
+    font-family: "Kelly Slab", serif;
+    color: rgba(255, 255, 255, 0.75);
+    width: 84%;
+}
+/* .add-form{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: last baseline;
+    width: 100;
+} */
+
+.add-menu-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #0796ef;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 50%;
+
+  }
+  
+  .add-menu-btn:hover {
+    background-color: #005bb5;
+  }
+  
+  .add-menu-form {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 50%;
+  }
+  
+  .add-menu-form h2 {
+    margin-bottom: 10px;
+  }
+  
+  .add-menu-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .add-menu-form input,
+  .add-menu-form textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .form-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .form-actions button {
+    padding: 8px 15px;
+    cursor: pointer;
+  }
+  
+  .form-actions button:first-child {
+    background-color: #0796ef;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .form-actions button:last-child {
+    background-color: #f5f5f5;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .menu-items p{
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+
+  .single-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effects */
+  }
+  
+  .single-menu:hover {
+    transform: scale(1.05); /* Scale up slightly on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Flexible grid */
+    gap: 80px; /* Space between items */
+    width: 100%; /* Take full width */
+    cursor: pointer;
+  }
+  
+
+  .menu-items {
+    border: 1px solid #FFFFFF;
+    width: 1140px;
+    height: 416px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 10px; /* Add padding for content spacing */
+    scrollbar-width: thin; /* For modern browsers */
+  }
+  
+  .menu-items::-webkit-scrollbar {
+    width: 8px; /* Adjust the scrollbar width */
+  }
+  
+  .menu-items::-webkit-scrollbar-thumb {
+    background-color: rgba(128, 0, 32, 0.5); /* Custom scrollbar color */
+    border-radius: 4px; /* Rounded scrollbar */
+  }
+  
+  .menu-items::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.2); /* Track color */
+  }
+  .menu-items {
+    border: 1px solid #FFFFFF; /* Retain the visible border */
+    width: 1140px;
+    height: 416px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll; /* Enable vertical scrolling */
+    padding: 10px; /* Add padding for content spacing */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  }
+  
+  /* Hide the scrollbar while keeping scrolling functionality */
+  .menu-items::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for WebKit browsers */
+  }
+  
+  .menu-items {
+    -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+  }
+  
