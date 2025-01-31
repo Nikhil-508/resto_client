@@ -53,20 +53,29 @@ const Main = ({ selectedCategory }) => {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     try {
-
-        console.log("haii",menuItemData.category)
-
-      const response = await axios.post("https://resto-server.vercel.app/api/menuItems", menuItemData);
+      console.log("Sending data:", menuItemData);
+  
+      // Ensure Content-Type is set correctly
+      const response = await axios.post(
+        "https://resto-server.vercel.app/api/menuItems", 
+        menuItemData, 
+        {
+          headers: {
+            "Content-Type": "application/json", // Ensure proper content type
+          }
+        }
+      );
       console.log("Menu item created:", response.data);
       alert("Menu item created successfully!");
-      setMenuItemData({ name: "", description: "", price: "", category: selectedCategory }); // Clear form
+      setMenuItemData({ name: "", description: "", price: "", category: selectedCategory });
       setShowForm(false); // Hide form
-      fetchMenuItems(selectedCategory); // Refresh the list of items
+      fetchMenuItems(selectedCategory); // Refresh menu items list
     } catch (error) {
       console.error("Error creating menu item:", error);
       alert("Failed to create menu item.");
     }
   };
+  
 
   return (
     <div
