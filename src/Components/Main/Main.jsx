@@ -167,6 +167,8 @@
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Assets } from "../../Assets";
+import './Main.css'
 
 const Main = ({ selectedCategory }) => {
   const [menuItems, setMenuItems] = useState([]);
